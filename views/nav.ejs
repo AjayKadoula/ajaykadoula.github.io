@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Pacifico|Raleway" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/nav.css'>
+    <link rel="icon" href='/images/logo.jpg' type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            if ($(window).scrollTop() >= 300) {
+                $('nav').addClass('fixed-header');
+
+            }
+            else {
+                $('nav').removeClass('fixed-header');
+
+            }
+        });
+        $(window).scroll(function(){
+            if ($(window).scrollTop() >= 500) {
+
+                    $("span").hide();
+
+            }
+            else {
+
+                    $("span").show();
+
+
+            }
+        });
+
+
+        $(document).ready(function (){
+            $("#arrowright").click(function(){
+                $("#about").animate({right: '100%'},3000);
+
+                setTimeout(function(){
+                    $("#skills").show();
+                    $("#about").hide(); }, 3000);
+
+            });
+        });
+
+
+    </script>
+
+
+</head>
+<body id="style-1">
+
+<div class="top-nav-kadoula">
+    <a href="/">  <img src="/images/KadoulaPortfolio1.jpg"></a>
+</div>
+<div id="header">
+<nav>
+<div class="nav-container">
+    <div class="navbar">
+        <div class="mobileMenu"></div>
+        <a href="/#header" class="logo"><div id="logo">Kadoula</div></a>
+        <a href="/" class="nav-item">Home</a>
+        <a href="#" class="nav-item">Portfolio</a>
+        <a href="/#followme" class="nav-item">Skills</a>
+        <a href="/#terminal" class="nav-item">Contact</a>
+        <div id="tmenu" class="toggleMenu">
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+            <span>&nbsp;</span>
+
+        </div>
+
+    </div>
+
+</div>
+</nav>
+<!-- Mobile Nav Section(hidden content) -->
+<div class="overlay">
+    <nav class="nav">
+        <a href="/#header">Home</a>
+        <a href="#">Portfolio</a>
+        <a href="/#followme"  class="navabout">About</a>
+        <a href="/#terminal">Contact</a>
+    </nav>
+</div>
+</div>
+<script src="/javascripts/navbar.js">
+
+</script>
+
