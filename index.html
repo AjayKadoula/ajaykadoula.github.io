@@ -1,0 +1,256 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Welcome To | Kadoula's Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">   
+<link href="css/font-awesome.css" rel="stylesheet">		<!-- font-awesome icons -->    
+<link rel="stylesheet" href="css/lightbox.css"> 
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<link rel="icon" href="logo.png"> 
+<!-- //Custom Theme files --> 
+<!-- js -->
+<script src="js/jquery-2.2.3.min.js"></script>  
+  <script data-require="jquery" data-semver="3.0.0" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
+  <script>
+    $(function() {
+      var initializeWatchClock = function(id, endtime) {
+        var clock = document.getElementById(id);
+        var daysSpan = clock.querySelector('.days');
+        var hoursSpan = clock.querySelector('.hours');
+        var minutesSpan = clock.querySelector('.minutes');
+        var secondsSpan = clock.querySelector('.seconds');
+
+        var updateWatchClock = function() {
+          var t = getTimeRemaining(endtime);
+
+          daysSpan.innerHTML = t.days;
+          hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+          minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+          secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+          if (t.total <= 0) {
+            clearInterval(interval);
+          }
+        }
+
+        //Update clock Watch!
+        updateWatchClock();
+        var interval = setInterval(updateWatchClock, 1000);
+      };
+
+      var getTimeRemaining = function(endtime) {
+        var t = Date.parse(endtime) - Date.parse(new Date());
+        var seconds = Math.floor((t / 1000) % 60);
+        var minutes = Math.floor((t / 1000 / 60) % 60);
+        var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+        var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
+        return {
+          'total': t,
+          'days': days,
+          'hours': hours,
+          'minutes': minutes,
+          'seconds': seconds
+        };
+      };
+
+      //Calculation for happy new year!
+      nextYear = new Date(new Date().getFullYear() + 1, 0, 1);
+      today = Date.parse(new Date());
+      newYearDay = new Date(nextYear);
+      remaningDT = newYearDay - today;
+      remanning = new Date(Date.parse(new Date()) + remaningDT);
+
+      initializeWatchClock('happyNewYear-div', remanning);
+    });
+  </script>
+<!-- //js -->
+<!-- web-fonts -->   
+<link href="//fonts.googleapis.com/css?family=Trochut:400,400i,700" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<!-- //web-fonts -->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top"> 
+	<!-- banner -->
+	<div id="home" class="w3ls-banner w3-agilefireworks jarallax"> 
+		<!-- header -->
+		<div class="header-w3layouts"> 
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Let's Party</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="index.html">Let's <span>Party</span></a></h1>
+					</div> 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right cl-effect-15">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li><a class="page-scroll" href="#home" data-hover="Home">Home</a></li> 
+							<!--<li><a class="page-scroll" href="#services" data-hover="Services">Services</a></li>
+							<li><a class="page-scroll" href="#staff" data-hover="Our Staff">Our Staff</a></li>
+							<li><a class="page-scroll" href="#gallery" data-hover="Gallery">Gallery</a></li>
+							<li><a class="page-scroll" href="#prices" data-hover="Prices">Prices</a></li>
+							<li><a class="page-scroll" href="#blog" data-hover="Blog">Blog</a></li>
+							<li><a class="page-scroll" href="#contact" data-hover="Contact">Contact</a></li>
+							<li class="w3ls-navlog"><a class="page-scroll" href="#myModal2" data-toggle="modal" data-hover="LOGIN">LOGIN</a></li> -->
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>  
+		</div>	
+
+		<!-- //header -->
+		<!-- banner-text -->
+		<div class="banner-text"> 
+				<img src="./KadoulaPortfolio1.jpg" style="height:200px; width:400px;">
+			<h2>Welcome 2019</h2>
+			<p>“As the New Year renews all the happiness and good tidings,
+hope the joyful spirit keeps glowing in your heart forever! Happy New Year!”.</p>
+			<!-- timer -->
+			<div class="agileits-timer"> 
+				<div class="clock">
+  <div id="happyNewYear-div" style="font-size:40px;">
+    <div class="column">
+	<div style="color:white;" >
+      <span style="color:white; font-size:40px;"  class="days"></span><div class="smalltext">Days</div>
+    </div>
+	</div>
+	<div class="column">
+    <div style="color:white;">
+      <span style="color:white; " class="hours"></span><div class="smalltext">Hours</div>
+    </div>
+	</div>
+	<div class="column">
+    <div style="color:white;">
+      <span style="color:white;" class="minutes"></span><div class="smalltext">Minutes</div>
+    </div>
+	</div>
+	<div class="column">
+    <div style="color:white;">
+      <span style="color:white;" class="seconds"></span><div class="smalltext">Seconds</div>
+    </div>
+	</div>
+  </div>
+					<div class="clearfix"> </div>
+				</div>	 
+			</div>
+			<!-- //timer --> 
+			<a href="#small-dialog" class="wthree-btn popup-with-zoom-anim">Happy New Year 2019 From Ajay Kadoula </a> 
+			<div class="clearfix"> </div>
+			<a href="#small-dialog" class="wthree-btn popup-with-zoom-anim">LOVE YOU MOM & DAD </a> 
+		</div> 
+		<!-- //banner-text -->   
+	</div>	
+	<!-- //banner --> 
+	<!-- welcome -->
+	<div class="welcome">    
+		<div class="welcome-agileinfo">
+			<div class="col-sm-6 col-xs-6 welcome-w3left">
+				<div class="col-xs-3 welcome-w3limg">
+					<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
+				</div>
+				<div class="col-xs-9 welcome-w3ltext"> 
+					<p>Bye Bye </p>
+					<h4>31st DEC 2018</h4>
+					<h6>Developed By Ajay Kadoula </h6>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="col-sm-6 col-xs-6 welcome-w3right">
+				<div class="col-xs-9 welcome-w3ltext"> 
+					<p>Welcome</p>
+					<h4>2019</h4>
+					<h6>Developed By Ajay Kadoula </h6>
+				</div>
+				<div class="col-xs-3 welcome-w3limg">
+					<i class="fa fa-street-view" aria-hidden="true"></i>
+				</div> 
+				<div class="clearfix"> </div>
+			</div> 
+			<div class="clearfix"> </div>
+		</div> 
+	</div>
+	<!-- //welcome -->
+	<!-- services -->
+	<!-- <div id="services" class="services">
+		<div class="container">  
+			<h3 class="w3stitle">OUR <span> SERVICES</span></h3>  
+			<div class="services-w3ls-row">
+				<div class="col-md-3 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
+					<span class="glyphicon glyphicon-home effect-1" aria-hidden="true"></span>
+					<h5>DJ Music</h5>
+					<p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
+					<span class="glyphicon glyphicon-list-alt effect-1" aria-hidden="true"></span>
+					<h5>Food & Drink</h5>
+					<p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6 services-grid agileits-w3layouts">
+					<span class="glyphicon glyphicon-tree-deciduous effect-1" aria-hidden="true"></span>
+					<h5>Rain Dance</h5>
+					<p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				</div>
+				<div class="col-md-3 col-sm-3 col-xs-6 services-grid">
+					<span class="glyphicon glyphicon-globe effect-1" aria-hidden="true"></span>
+					<h5>Fireworks</h5>
+					<p>Itaque earum rerum hic a sapiente delectus in auctor sapien.</p>
+				</div> 
+				<div class="clearfix"> </div>
+			</div>  
+		</div>
+	</div>-->
+	<!-- //services -->
+
+	
+	<!-- modal -->
+
+	<!-- //modal -->
+	<!-- modal -->
+ 		 
+	<!-- fireworks scripts --> 
+	<script type="text/javascript" src="js/jquery.fireworks.js"></script>
+	<script>	
+		setTimeout(function() {
+			$('.w3-agilefireworks').fireworks();   
+		});
+	</script>
+	<!-- //fireworks scripts -->
+	<!-- ResponsiveTabs js -->
+
+	<!-- //end-smooth-scrolling -->	 
+	<!-- smooth-scrolling-of-move-up -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<!-- //smooth-scrolling-of-move-up -->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
